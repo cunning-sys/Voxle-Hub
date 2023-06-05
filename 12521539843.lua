@@ -689,6 +689,10 @@ RunService.PostSimulation:Connect(function()
 		LocalPlayer.Character.States.Ragdolled.Value = false
 	end
 
+	if settings.autoquest.enabled and settings.autoquest.quest ~= nil then
+		game:GetService("ReplicatedStorage").RepStorage.Remotes.TalkToNPC:FireServer(settings.autoquest.quest, '')
+	end
+
 	autofarm_mob()
 	farm_chests()
 	farm_ore()
