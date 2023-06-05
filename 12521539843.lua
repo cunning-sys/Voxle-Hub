@@ -709,6 +709,10 @@ __namecall = hookmetamethod(game, '__namecall', newcclosure(function(self, ...)
     return __namecall(self, ...)
 end))
 
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+	v:Disable()
+end
+
 --[[
 	
 Deep Forest Twine
